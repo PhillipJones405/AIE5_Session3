@@ -351,6 +351,7 @@ The main differences between DeepSeek-R1 and DeepSeek-R1-Zero are as follows:
 
 Overall, DeepSeek-R1-Zero demonstrates superior performance and self-evolution in reasoning tasks compared to DeepSeek-R1.
 3. What is this paper about?
+"I don't know" I had to ask about the context instead.
 
 Does this application pass your vibe check? Are there any immediate pitfalls you're noticing?
 
