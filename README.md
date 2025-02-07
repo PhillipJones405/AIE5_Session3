@@ -167,6 +167,7 @@ Simply put, this downloads the file as a temp file, we load it in with `TextFile
 #### ❓ QUESTION #1:
 
 Why do we want to support streaming? What about streaming is important, or useful?
+Streaming ensures a more seamless user experience. Especially for longer responses it is better for the user experience to begin seeing the response rather than having to wait for the entire response to come back at once.
 
 ### On Chat Start:
 
@@ -209,6 +210,8 @@ Now, we'll save that into our user session!
 #### ❓ QUESTION #2: 
 
 Why are we using User Session here? What about Python makes us need to use this? Why not just store everything in a global variable?
+If we use a global variable, the variable can be modified by any user and that modification affects other users. User sessions allow for the variables to be unique to a particular user.
+
 
 ### On Message
 
@@ -330,7 +333,23 @@ Try uploading a text file and asking some questions!
 Upload a PDF file of the recent DeepSeek-R1 paper and ask the following questions:
 
 1. What is RL and how does it help reasoning?
+Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative rewards. In the context of language models like DeepSeek-R1-Zero, RL helps improve reasoning capabilities by allowing the model to explore and refine its reasoning patterns through trial and error, without relying on supervised fine-tuning (SFT).
+
+Through RL, the model evolves its reasoning capabilities by receiving feedback (rewards) for its reasoning outputs, enabling it to develop more effective and complex reasoning behaviors over time. This approach is significant as it demonstrates that reasoning capabilities can be incentivized purely through RL processes, leading to impressive performance improvements on various reasoning tasks.
 2. What is the difference between DeepSeek-R1 and DeepSeek-R1-Zero?
+The main differences between DeepSeek-R1 and DeepSeek-R1-Zero are as follows:
+
+1. **Capabilities**: DeepSeek-R1 currently falls short of DeepSeek-R1-Zero in handling tasks such as function calling, multi-turn interactions, complex role-playing, and JSON output.
+
+2. **Self-evolution Process**: DeepSeek-R1-Zero has a self-evolution process driven by reinforcement learning (RL) that allows it to improve its reasoning capabilities autonomously, starting directly from the base model. In contrast, DeepSeek-R1 does not emphasize this self-evolution process.
+
+3. **Performance**: DeepSeek-R1-Zero has shown a significant improvement in performance metrics (e.g., pass@1 score) throughout the RL training process, indicating strong foundational capabilities. 
+
+4. **Prompt Sensitivity**: DeepSeek-R1 is sensitive to prompts and exhibits degraded performance with few-shot prompting, whereas for optimal results, it is suggested to directly describe the problem using a zero-shot setting.
+
+5. **Language Handling**: DeepSeek-R1 is optimized for Chinese and English, which may lead to language mixing, while the context does not specify similar limitations for DeepSeek-R1-Zero.
+
+Overall, DeepSeek-R1-Zero demonstrates superior performance and self-evolution in reasoning tasks compared to DeepSeek-R1.
 3. What is this paper about?
 
 Does this application pass your vibe check? Are there any immediate pitfalls you're noticing?
